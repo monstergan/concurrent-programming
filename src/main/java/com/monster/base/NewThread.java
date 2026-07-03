@@ -1,12 +1,14 @@
-package com.monster;
+package com.monster.base;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 public class NewThread {
-    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(NewThread.class);
+    private static final Logger log = LoggerFactory.getLogger(NewThread.class);
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         Thread t1 = new Thread(new Runnable() {
@@ -37,13 +39,13 @@ public class NewThread {
 
         // 创建任务对象
         FutureTask<Integer> task = new FutureTask<>(() -> {
-            log.info("Thread 4 is running");
+            log.debug("Thread 4 is running");
             return 100;
         });
         Thread t4 = new Thread(task, "t4");
         t4.start();
         // 主线程阻塞，同步等待 task
         Integer result = task.get();
-        log.info("结果是：{}", result);
+        log.debug("结果是：{}", result);
     }
 }
