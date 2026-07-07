@@ -2,9 +2,6 @@ package com.monster.future;
 
 import com.monster.future.dto.T1Task;
 import com.monster.future.dto.T2Task;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
