@@ -20,12 +20,12 @@ public class FutureTaskDemo3 {
         FutureTask<String> ft1 = new FutureTask<>(new T1Task(ft2));
 
         // 线程 T1 执行任务 ft1
-        Thread T1 = new Thread(ft1);
-        T1.start();
+        Thread t1 = new Thread(ft1);
+        t1.start();
 
         // 线程 T2 执行任务 ft2
-        Thread T2 = new Thread(ft2);
-        T2.start();
+        Thread t2 = new Thread(ft2);
+        t2.start();
 
         // 等待线程 T1 执行结果
         System.out.println(ft1.get());
